@@ -1,7 +1,7 @@
 # Almighty_gpt_bot
 GPT telegram bot that you can use to solve any problems from learning languages to coding.
 
-[link to git](#)
+[link to git](https://github.com/NikkyBricky/Almighty_gpt_bot)
 # Description
 
 This is a bot based on gpt. It can answer any questions (in ethical scope).
