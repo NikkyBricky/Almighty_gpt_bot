@@ -434,12 +434,16 @@ def check_speechkit(message):
 
         command = message.text
 
+        keyboard = make_reply_keyboard("exit_test")
+
         if command == "/stt":
-            bot.send_message(message.chat.id, "Проверка режима распознавания речи. Отправьте голосовое сообщение.")
+            bot.send_message(message.chat.id, "Проверка режима распознавания речи. Отправьте голосовое сообщение.",
+                             reply_markup=keyboard)
             bot.register_next_step_handler(message, send_test_stt, user_id)
 
         else:
-            bot.send_message(message.chat.id, "Проверка режима синтеза речи. Отправьте текстовое сообщение.")
+            bot.send_message(message.chat.id, "Проверка режима синтеза речи. Отправьте текстовое сообщение.",
+                             reply_markup=keyboard)
             bot.register_next_step_handler(message, send_test_tts, user_id)
 
     else:
@@ -447,7 +451,12 @@ def check_speechkit(message):
 
 
 def send_test_stt(message, user_id):
-    if message.voice:
+    if message.text and message.text == "Выход":
+        bot.send_message(message.chat.id, "Перехожу в обычный режим.",
+                         reply_markup=make_reply_keyboard("main_menu"))
+        return
+
+    elif message.voice:
         stt_text = process_stt(message, user_id)
 
         if not stt_text:
@@ -464,6 +473,11 @@ def send_test_stt(message, user_id):
 
 def send_test_tts(message, user_id):
     if message.text:
+        if message.text == "Выход":
+            bot.send_message(message.chat.id, "Перехожу в обычный режим.",
+                             reply_markup=make_reply_keyboard("main_menu"))
+            return
+
         process_tts(message, user_id, message.text, 0, True)
 
         bot.send_message(message.chat.id, "Перехожу в обычный режим.")

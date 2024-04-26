@@ -12,6 +12,9 @@ def make_reply_keyboard(params):
     elif params == "back_to_main_menu":
         keyboard.add("Вернуться в главное меню")
 
+    elif params == "exit_test":
+        keyboard.add("Выход")
+
     return keyboard
 
 
