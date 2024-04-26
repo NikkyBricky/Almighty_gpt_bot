@@ -1,5 +1,5 @@
 # Almighty_gpt_bot
-GPT telegram bot that you can use to solve any problems from learning languages to coding.
+GPT telegram bot that you can use to solve any problems from learning languages to coding. It can hear you!
 
 [link to GitHub](https://github.com/NikkyBricky/Almighty_gpt_bot)
 # Description
