@@ -18,7 +18,7 @@ If you want to make your bot with the functions like here, I suggest you to:
  2. Create .env file with BOT_TOKEN, IAM_TOKEN, FOLDER_ID, ADMIN_ID (your telegram_id) and GRAMMAR_API_KEY (optional) variables
  3. Install packages from requirements.txt 
  4. If you want to move bot to the server, you may not use IAM_TOKEN, but func get_creds() from file make_gpt_token.py to get token automatically  
- 5. You can also use infra directory from the project to make it work non-stop on your server 
+ 5. You can also use infra directory from the project to make it work non-stop on your server (change the name of .service file and insert your paths in ExecStart)
 
 If you just want to see it work:
  1. Go to https://t.me/best_solutions_bot (bot is launched on cloud)
