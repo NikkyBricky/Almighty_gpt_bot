@@ -39,7 +39,7 @@ def debug(message):
     if user_id == int(ADMIN_ID):
         check_user_exists(user_id)
 
-        with open("logs.txt", "rb") as f:
+        with open(LOGS, "rb") as f:
             bot.send_document(message.chat.id, f)
 
     else:
