@@ -1,0 +1,11 @@
+[Unit]
+Description=clever text and voice gpt assistant
+After=multi-user.target
+[Service]
+Type=simple
+ExecStart=/home/student/Almight_gpt_bot/venv/bin/python3 /home/student/Almight_gpt_bot/bot.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
