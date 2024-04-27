@@ -5,7 +5,7 @@ import time
 
 import requests
 
-TOKEN_PATH = "creds/token.json"
+TOKEN_PATH = "/home/student/Almighty_gpt_bot/creds/token.json"
 
 
 def create_new_token():
