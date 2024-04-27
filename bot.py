@@ -464,7 +464,8 @@ def send_test_stt(message, user_id):
 
         bot.send_message(message.chat.id, f"<b>Распознанный текст</b>\n\n{stt_text}", parse_mode="html")
 
-        bot.send_message(message.chat.id, "Перехожу в обычный режим.")
+        bot.send_message(message.chat.id, "Перехожу в обычный режим.",
+                         reply_markup=make_reply_keyboard("main_menu"))
 
     else:
         bot.send_message(message.chat.id, "Кажется, вы отправили не голосовое сообщение. Попробуйте еще раз.")
@@ -480,7 +481,8 @@ def send_test_tts(message, user_id):
 
         process_tts(message, user_id, message.text, 0, True)
 
-        bot.send_message(message.chat.id, "Перехожу в обычный режим.")
+        bot.send_message(message.chat.id, "Перехожу в обычный режим.",
+                         reply_markup=make_reply_keyboard("main_menu"))
 
     else:
         bot.send_message(message.chat.id, "Кажется, вы отправили не текстовое сообщение. Попробуйте еще раз.")
