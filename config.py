@@ -9,7 +9,7 @@ LOGS = 'logs.txt'  # файл для логов
 DB_FILE = 'user_data.db'  # файл для базы данных
 
 # Общие настройки для сервера
-# HOME_DIR = '/home/student/gpt_bot'  # путь к папке с проектом
+# HOME_DIR = '/home/student/Almighty_gpt_bot'  # путь к папке с проектом
 # LOGS = f'{HOME_DIR}/logs.txt'  # файл для логов
 # DB_FILE = f'{HOME_DIR}/user_data.db'  # файл для базы данных
 
