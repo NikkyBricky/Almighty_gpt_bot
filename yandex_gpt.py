@@ -1,7 +1,7 @@
 import requests
 import logging  # модуль для сбора логов
 # подтягиваем константы из config файла
-from config import LOGS, MAX_GPT_TOKENS, SYSTEM_PROMPT, IAM_TOKEN, FOLDER_ID, MODEL
+from config import LOGS, MAX_GPT_TOKENS, SYSTEM_PROMPT, get_token, FOLDER_ID, MODEL
 
 # настраиваем запись логов в файл
 logging.basicConfig(filename=LOGS,
@@ -9,6 +9,9 @@ logging.basicConfig(filename=LOGS,
                     format="%(asctime)s FILE: %(filename)s IN: %(funcName)s MESSAGE: %(message)s",
                     filemode="w",
                     force=True)
+
+
+IAM_TOKEN = get_token()
 
 
 # подсчитываем количество токенов в сообщениях

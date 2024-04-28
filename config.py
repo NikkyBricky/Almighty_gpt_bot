@@ -32,11 +32,16 @@ BOT_DESCRIPTION = ("Данный бот поможет вам в любом во
 
 CONTENT_TYPES = ["audio", "document", "photo", "sticker", "video", "video_note"]
 
-# Настройки для gpt
-IAM_TOKEN = os.getenv("IAM_TOKEN")  # для локального запуска
 
-if not IAM_TOKEN:  # для запуска на сервере
-    IAM_TOKEN = get_creds()
+# Настройки для gpt
+def get_token():
+    iam_token = os.getenv("IAM_TOKEN")  # для локального запуска
+
+    if not iam_token:  # для запуска на сервере
+        iam_token = get_creds()
+
+    return iam_token
+
 
 FOLDER_ID = os.getenv("FOLDER_ID")
 MODEL = "yandexgpt"

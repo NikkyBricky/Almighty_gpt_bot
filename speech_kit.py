@@ -1,7 +1,7 @@
 import logging
 
 import requests
-from config import IAM_TOKEN, FOLDER_ID, LOGS
+from config import get_token, FOLDER_ID, LOGS
 
 # настраиваем запись логов в файл
 logging.basicConfig(filename=LOGS,
@@ -9,6 +9,8 @@ logging.basicConfig(filename=LOGS,
                     format="%(asctime)s FILE: %(filename)s IN: %(funcName)s MESSAGE: %(message)s",
                     filemode="w",
                     force=True)
+
+IAM_TOKEN = get_token()
 
 
 def speech_to_text(data):
