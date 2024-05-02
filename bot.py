@@ -80,7 +80,7 @@ def get_started(message):
         return
 
     keyboard = make_reply_keyboard("main_menu")
-    bot.send_message(message.chat.id, text=START_MSG, reply_markup=keyboard)
+    bot.send_message(message.chat.id, text=START_MSG, reply_markup=keyboard, parse_mode="html")
 
 
 @bot.message_handler(commands=["help"])
