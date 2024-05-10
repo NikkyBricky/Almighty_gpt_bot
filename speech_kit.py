@@ -1,7 +1,8 @@
 import logging
 
 import requests
-from config import get_token, FOLDER_ID, LOGS
+from config import FOLDER_ID, LOGS
+from make_gpt_token import get_token
 
 # настраиваем запись логов в файл
 logging.basicConfig(filename=LOGS,

@@ -1,7 +1,6 @@
 from dotenv import load_dotenv
 import os
 from telebot.types import BotCommand
-from make_gpt_token import get_creds
 load_dotenv()
 
 # Общие настройки
@@ -34,15 +33,6 @@ CONTENT_TYPES = ["audio", "document", "photo", "sticker", "video", "video_note"]
 
 
 # Настройки для gpt
-def get_token():
-    iam_token = os.getenv("IAM_TOKEN")  # для локального запуска
-
-    if not iam_token:  # для запуска на сервере
-        iam_token = get_creds()
-
-    return iam_token
-
-
 FOLDER_ID = os.getenv("FOLDER_ID")
 MODEL = "yandexgpt"
 MAX_GPT_TOKENS = 150  # максимальное кол-во токенов в ответе GPT

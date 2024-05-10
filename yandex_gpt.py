@@ -1,7 +1,9 @@
 import requests
 import logging  # модуль для сбора логов
 # подтягиваем константы из config файла
-from config import LOGS, MAX_GPT_TOKENS, SYSTEM_PROMPT, get_token, FOLDER_ID, MODEL
+from config import LOGS, MAX_GPT_TOKENS, SYSTEM_PROMPT, FOLDER_ID, MODEL
+from make_gpt_token import get_token
+
 
 # настраиваем запись логов в файл
 logging.basicConfig(filename=LOGS,
